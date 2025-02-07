@@ -1,6 +1,6 @@
 import express from "express";
 import { allCoupons, applyDiscount, createPaymentIntent, deleteCoupon, newCoupon } from "../controllers/payment.js";
-import { adminOnly } from "../middlewares/auth.js";
+// import { adminOnly } from "../middlewares/auth.js";
 
 const app = express.Router();
 

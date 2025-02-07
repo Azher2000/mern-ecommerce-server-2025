@@ -1,5 +1,5 @@
 import express from "express";
-import { adminOnly } from "../middlewares/auth.js";
+// import { adminOnly } from "../middlewares/auth.js";
 import { deleteProduct, getAdminProducts, getAllCategories, getAllProducts, getlatestProducts, getSingleProduct, newProduct, updateProduct } from "../controllers/product.js";
 import { singleUpload } from "../middlewares/multer.js";
 
@@ -21,10 +21,16 @@ app.get("/categories", getAllCategories);
 // To get all Products
 app.get("/admin-products", getAdminProducts);
 
+// app
+//   .route("/:id")
+//   .get(getSingleProduct)
+//   .put(adminOnly, singleUpload, updateProduct)
+//   .delete(adminOnly, deleteProduct);
+
 app
   .route("/:id")
   .get(getSingleProduct)
-  .put(adminOnly, singleUpload, updateProduct)
-  .delete(adminOnly, deleteProduct);
+  .put(singleUpload, updateProduct)
+  .delete(deleteProduct);
 
 export default app;

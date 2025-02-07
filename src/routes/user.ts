@@ -1,6 +1,6 @@
 import express from "express";
 import { deleteUser, getAllUsers, getUser, newUser } from "../controllers/user.js";
-import { adminOnly } from "../middlewares/auth.js";
+// import { adminOnly } from "../middlewares/auth.js";
 
 const app = express.Router();
 
@@ -13,6 +13,8 @@ app.get("/all", getAllUsers);
 
 app.get("/:id", getUser);
 
-app.delete("/:id", adminOnly, deleteUser);
+// app.delete("/:id", adminOnly, deleteUser);
+
+app.delete("/:id", deleteUser);
 
 export default app;
