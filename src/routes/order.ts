@@ -11,12 +11,20 @@ app.post("/new", newOrder);
 app.get("/my", myOrders);
 
 // route - /api/v1/order/all
-app.get("/all", adminOnly, allOrders);
+// app.get("/all", adminOnly, allOrders);
+
+// app
+//   .route("/:id")
+//   .get(getSingleOrder)
+//   .put(adminOnly, processOrder)
+//   .delete(adminOnly, deleteOrder);
+
+app.get("/all", allOrders);
 
 app
   .route("/:id")
   .get(getSingleOrder)
-  .put(adminOnly, processOrder)
-  .delete(adminOnly, deleteOrder);
+  .put(processOrder)
+  .delete(deleteOrder);
 
 export default app;

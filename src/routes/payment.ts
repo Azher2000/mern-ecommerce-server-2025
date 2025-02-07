@@ -9,12 +9,19 @@ app.post("/create", createPaymentIntent);
 
 app.get("/discount", applyDiscount);
 
+// // route - /api/v1/payment/Coupon/new
+// app.post("/coupon/new", adminOnly, newCoupon);
+
+// app.get("/coupon/all", adminOnly, allCoupons);
+
+// app.delete("/coupon/:id", adminOnly, deleteCoupon);
+
 // route - /api/v1/payment/Coupon/new
-app.post("/coupon/new", adminOnly, newCoupon);
+app.post("/coupon/new", newCoupon);
 
-app.get("/coupon/all", adminOnly, allCoupons);
+app.get("/coupon/all", allCoupons);
 
-app.delete("/coupon/:id", adminOnly, deleteCoupon);
+app.delete("/coupon/:id", deleteCoupon);
 
 
 export default app;
